@@ -1,0 +1,27 @@
+
+Next steo is to make the image carosuel with js
+
+extra stuff, detail the header and carosuel bar
+
+
+
+1. Issues with js function. When I tried to run it, it would show the first image, but when i clikced right arrow nothing happened. when i clicked the left arrow it moved but its not displaying the second image, its just displaying the word pics. Something is wrong in the js or html
+
+solution,1 : GPT said that when i was doing the line ``let currentSrc = currentImage.src.split('/').pop(); // get just the file name`` It was getting the full path of the image, not just the file name. So when I compared it to the array of image names, it was not matching. So I changed it to ``let currentSrc = currentImage.src.split('/').pop().split('\\').pop(); // get just the file name``. But this didn't work. While this is good to have the problem is still here.
+
+solution 2: A typo on my pat I had should of had``const rightArrow = container.querySelector('.arrow-right'); `` but I had ``.arrowright-``
+
+
+
+2. Now im on to the experince section. So far its been good
+
+
+3. Pulling my hair out. MY dropdown menu is not working on home page but it is on my other pages.
+solution. ITS BECUASE OF THE CARD BOX, its blocking the dropdown
+
+taking a break for today: issue    <section class=" hero">, instead of    <section class="hero">
+
+NOPE
+
+issue was becuase i had the position relative. if i remove that then the drop down works. I had to comment out parts of my 
+html to get figure out what part was causing the issue
