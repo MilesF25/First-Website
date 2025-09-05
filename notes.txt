@@ -24,4 +24,8 @@ taking a break for today: issue    <section class=" hero">, instead of    <secti
 NOPE
 
 issue was becuase i had the position relative. if i remove that then the drop down works. I had to comment out parts of my 
-html to get figure out what part was causing the issue
+html to get figure out what part was causing the issue'
+
+
+
+4. Issue with getting the website live. Turns out my website wasn't working becuase windows just wants to be different and use backslash instead of forward slash. This gave me such a headache
