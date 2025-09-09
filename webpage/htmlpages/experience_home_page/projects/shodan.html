@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../blogs/cmu.css">
+    <title>CMU</title>
+</head>
+
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Miles</a>
+            <ul class="nav-links">
+                <li><a href="../../../htmlpages/homepage.html">Home</a></li>
+                <li><a href="https://github.com/MilesF25" target="_blank">Github</a></li>
+                <li><a href="../../../htmlpages/contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Navigation</span>
+                    <div class="dropdown-menu">
+
+                        <a href="Personal_Projects.html">Projects</a>
+                        <a href="..\..\..\assets\MilesFranckresume.pdf" target="_blank">
+                            Resume</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="cmu">
+        <div class="cmu-box">
+            <h1 class="cmu-title">Exploring With Shodan</h1>
+            <p class="cmu-text">
+            </p>
+            <br>
+            <p class="cmu-text">so i was interested in learning more about network vulnerabilities and how to find them
+                After writing an article about the salt typhoon hack for my internship, which at the time of wrighting
+                this
+                should be on my linkedin in a day or two. But basically, chinese government hackers exploited a backdoor
+                the US government uses to "legally" see US citizens data and messages. Now that tons of government and
+                citizens
+                data is at risk, I wanted to learn more about how these vulnerabilities are found and exploited.
+
+                I found this cool website called Shodan that lets you search for internet-connected devices and see if
+                they have any known vulnerabilities.
+                I wanted to write a script that could take a search query, like "apache port:80", and then use the
+                Shodan API to find devices that match that query
+                and check if they have any CVEs (Common Vulnerabilities and Exposures) associated with them.
+
+
+                The making of this script is straightforward now that I completed it. But when I was trying to figure
+                out what I wanted to do I was a bit clueless.
+                How could I do something cool with Shodan? At first I though about making some kind of sql like query
+                language for shodan, but that seemed a bit too ambitious.
+                Halfway through writing that code I realized that im doing way too much. Why use my program when you
+                could just go on the Shodan website and search it up there.
+
+                Then I thought about making a script that could take a search query and return the top 5 most exploited
+                CVEs, organizations, and services associated with devices that match that query.</p>
+            <br>
+
+            <p class="cmu-text">Here is what the results of this little test looks linkedin
+            <pre Enter your Shodan API key: Secret Would you like to use example query (yes\no)? yes Select an example
+                query: 1. port:80 country:US apache 2. nginx city:Los Angeles port:443 3. microsoft-iis country:DE
+                port:80 4. port:22 openssh country:US 5. apache port:80 org:Amazon Enter number (1-5): 5 Selected query:
+                apache port:80 org:Amazon [*] Running query: apache port:80 org: Amazon Top CVEs in apache port:80
+                org:Amazon ┏━━━━━━━━━━━━━━━┓ ┃ CVE ┃ ┡━━━━━━━━━━━━━━━┩ │ CVE-2013-0941 │ │ CVE-2013-4365 │ │
+                CVE-2012-4001 │ │ CVE-2009-2299 │ │ CVE-2013-2765 │ └───────────────┘ Most Exposed Orgs
+                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓ ┃ Org ┃ Hosts ┃
+                ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩ │ Amazon Technologies Inc. │ 79 │ │ Amazon Data
+                Services NoVa │ 30 │ │ Amazon Data Services Japan │ 26 │ │ Amazon Data Services Ireland Limited │ 19 │ │
+                Amazon Data Services India │ 13 │ └──────────────────────────────────────┴───────┘ Exposed Services
+                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓ ┃ Service ┃ Hosts ┃
+                ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩ │ Apache httpd │ 178 │ │ Apache Tomcat\Coyote JSP engine │ 2
+                │ │ Apache Superset │ 1 │ │ Nextcloud │ 1 │ └─────────────────────────────────┴───────┘></pre>
+
+            </p>
+
+            <p class="cmu-text">I have a more indepth version of this on the way, stay tuned</p>
+
+        </div>
+
+
+
+
+
+</body>
+
+</html>
