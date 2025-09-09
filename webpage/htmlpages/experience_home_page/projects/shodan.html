@@ -59,9 +59,11 @@
             <p class="cmu-text">
                 That’s when I found <code>Shodan</code> — a search engine for internet-connected devices.
                 It not only shows exposed systems, but also whether they have known vulnerabilities.
-                I decided to write a script that takes a search query, like
-                <code>apache port:80</code>, and uses the Shodan API to see if matching devices
-                have related CVEs (<strong>Common Vulnerabilities and Exposures</strong>).
+                I decided to write a script that takes a shodan search query and finds,
+
+                Top 5 Most Common CVEs - Which vulnerabilities appear most frequently across all devices found
+                Top 5 Most Exposed Organizations - Which ISPs/companies have the most vulnerable devices
+                Top 5 Most Exposed Services - Which software/products (like Apache, nginx, etc.) appear most often.
             </p>
 
             <p class="cmu-text">
@@ -71,9 +73,12 @@
             </p>
 
             <p class="cmu-text">
-                So instead, I shifted focus: my script takes a search query and returns the
-                <strong>top 5 most exploited CVEs, organizations, and services</strong>
-                associated with the devices.
+                This way, instead of replacing Shodan, my script highlights the real-world impact of exposed systems by
+                showing which CVEs, orgs, and services are most at risk. This is just a test concept. I am planning to
+                have an more in depth analysis tool soon.
+
+                <a href="https://github.com/MilesF25/Shodan/tree/main">Check it out here</a>
+
             </p>
 
             <h2 class="cmu-subtitle">Example Run</h2>
