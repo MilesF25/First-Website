@@ -71,19 +71,56 @@
             <br>
 
             <p class="cmu-text">Here is what the results of this little test looks linkedin
-            <pre Enter your Shodan API key: Secret Would you like to use example query (yes\no)? yes Select an example
-                query: 1. port:80 country:US apache 2. nginx city:Los Angeles port:443 3. microsoft-iis country:DE
-                port:80 4. port:22 openssh country:US 5. apache port:80 org:Amazon Enter number (1-5): 5 Selected query:
-                apache port:80 org:Amazon [*] Running query: apache port:80 org: Amazon Top CVEs in apache port:80
-                org:Amazon ┏━━━━━━━━━━━━━━━┓ ┃ CVE ┃ ┡━━━━━━━━━━━━━━━┩ │ CVE-2013-0941 │ │ CVE-2013-4365 │ │
-                CVE-2012-4001 │ │ CVE-2009-2299 │ │ CVE-2013-2765 │ └───────────────┘ Most Exposed Orgs
-                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓ ┃ Org ┃ Hosts ┃
-                ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩ │ Amazon Technologies Inc. │ 79 │ │ Amazon Data
-                Services NoVa │ 30 │ │ Amazon Data Services Japan │ 26 │ │ Amazon Data Services Ireland Limited │ 19 │ │
-                Amazon Data Services India │ 13 │ └──────────────────────────────────────┴───────┘ Exposed Services
-                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓ ┃ Service ┃ Hosts ┃
-                ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩ │ Apache httpd │ 178 │ │ Apache Tomcat\Coyote JSP engine │ 2
-                │ │ Apache Superset │ 1 │ │ Nextcloud │ 1 │ └─────────────────────────────────┴───────┘></pre>
+            <pre>
+Enter your Shodan API key: Secret 
+Would you like to use example query (yes\no)? yes 
+
+Select an example query:
+1. port:80 country:US apache
+2. nginx city:Los Angeles port:443
+3. microsoft-iis country:DE port:80
+4. port:22 openssh country:US
+5. apache port:80 org:Amazon 
+
+Enter number (1-5): 5
+Selected query: apache port:80 org:Amazon 
+
+[*] Running query: apache port:80 org:Amazon
+
+Top CVEs in apache port:80 org:Amazon
+┏━━━━━━━━━━━━━━━┓
+┃ CVE           ┃
+┡━━━━━━━━━━━━━━━┩
+│ CVE-2013-0941 │
+│ CVE-2013-4365 │
+│ CVE-2012-4001 │
+│ CVE-2009-2299 │
+│ CVE-2013-2765 │
+└───────────────┘
+
+Most Exposed Orgs
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Org                                  ┃ Hosts ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ Amazon Technologies Inc.             │ 79    │
+│ Amazon Data Services NoVa            │ 30    │
+│ Amazon Data Services Japan           │ 26    │
+│ Amazon Data Services Ireland Limited │ 19    │
+│ Amazon Data Services India           │ 13    │
+└──────────────────────────────────────┴───────┘
+
+Exposed Services
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Service                         ┃ Hosts ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ Apache httpd                    │ 178   │
+│ Apache Tomcat\Coyote JSP engine │ 2     │
+│ Apache Superset                 │ 1     │
+│ Nextcloud                       │ 1     │
+└─────────────────────────────────┴───────┘
+</pre>
+
+
 
             </p>
 
