@@ -167,6 +167,7 @@ nav {
 /*drop down*/
 .dropdown {
     position: relative;
+
 }
 
 .dropdown-toggle {
@@ -212,6 +213,7 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin-top: 0.25rem;
     pointer-events: none;
+    z-index: 999;
 
 }
 
@@ -242,6 +244,7 @@ nav {
     transition: all 0.3s ease;
     border-radius: 6px;
     margin: 0.25rem;
+    z-index: 999;
 }
 
 .dropdown-menu a:hover {
