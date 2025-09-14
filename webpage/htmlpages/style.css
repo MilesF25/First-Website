@@ -178,6 +178,7 @@ nav {
     gap: 0.5rem;
 
 
+
 }
 
 .dropdown-toggle:hover {
@@ -211,6 +212,7 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin-top: 0.25rem;
     pointer-events: none;
+
 }
 
 /* Add invisible bridge to prevent hover gaps */
