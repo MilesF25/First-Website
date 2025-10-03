@@ -86,7 +86,7 @@ def check_system_properties():
 
   
 
-    # Check Total RAM (convert bytes to GB)
+    # Check Total RAM 
 
     total_ram_gb = psutil.virtual_memory().total / (1024**3)
 
@@ -106,7 +106,7 @@ def check_system_properties():
 
   
 
-    # Check Total Disk Size (convert bytes to GB)
+    # Check Total Disk Size 
 
     total_disk_gb = psutil.disk_usage("/").total / (1024**3)
 
