@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../blogs/cmu.css">
+    <title>Myth Stealer</title>
+
+</head>
+
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+
+    <div class="cmu">
+        <div class="cmu-box">
+            <h1 class="cmu-title">Mythstealer</h1>
+
+
+            <p class="cmu-text">
+                So I was interesting in learning rust, I have very little experience in the language so naturally to get
+                back into it, I decide to dive into the deep end and try building something complex. So I was looking on
+                the internet for cool projects and I somehow stumbled up an article talking about mythstealer, malware
+                made in Rust. I was curious about it so I decided to look into how it worked.
+
+                I was interested in learning Rust, but with very little experience in the language, I decided to dive
+                into the deep end and build something complex. While searching for project ideas, I stumbled upon an
+                article about Myth Stealer a infostealer written in Rust. I was immediately curious about
+                how it worked, so I decided to reverse-engineer its techniques as a learning exercise. The article I
+                read is here: <a
+                    href="https://www.trellix.com/en-sg/blogs/research/demystifying-myth-stealer-a-rust-based-infostealer/">Trellix
+                    Research: Demystifying Myth Stealer</a>
+            </p>
+
+
+            <br>
+
+
+            <pre class="code-block"><code>
+def check_system_properties():
+
+    """
+
+    Checks for common sandbox/VM hardware and resource footprints.
+
+    - Low CPU cores
+
+    - Low RAM
+
+    - Small disk size
+
+    - Known VM MAC address prefixes
+
+    """
+
+    print("\n[+] Checking system properties...")
+
+    is_sandboxed = False
+
+  
+
+    # Check CPU Core Count
+
+    cpu_cores = psutil.cpu_count(logical=False)
+
+    if cpu_cores < 2:
+
+        print(
+
+            f"[!] Sandboxed Environment Detected: Only {cpu_cores} physical CPU core(s)."
+
+        )
+
+        is_sandboxed = True
+
+    else:
+
+        print(f"[-] CPU cores check passed ({cpu_cores} cores).")
+
+  
+
+    # Check Total RAM (convert bytes to GB)
+
+    total_ram_gb = psutil.virtual_memory().total / (1024**3)
+
+    if total_ram_gb < 3.9:
+
+        print(
+
+            f"[!] Sandboxed Environment Detected: Less than 4 GB of RAM ({total_ram_gb:.2f} GB)."
+
+        )
+
+        is_sandboxed = True
+
+    else:
+
+        print(f"[-] RAM check passed ({total_ram_gb:.2f} GB).")
+
+  
+
+    # Check Total Disk Size (convert bytes to GB)
+
+    total_disk_gb = psutil.disk_usage("/").total / (1024**3)
+
+    if total_disk_gb < 100:
+
+        print(
+
+            f"[!] Sandboxed Environment Detected: Disk size is less than 100 GB ({total_disk_gb:.2f} GB)."
+
+        )
+
+        is_sandboxed = True
+
+    else:
+
+        print(f"[-] Disk size check passed ({total_disk_gb:.2f} GB).")
+
+  
+
+    # Check for known VM MAC address prefixes
+
+    vm_mac_prefixes = [
+
+        "00:05:69",
+
+        "00:0c:29",
+
+        "00:50:56",
+
+        "08:00:27",
+
+    ]  # VMWare, VirtualBox
+
+    all_macs = []
+
+    for interface, snics in psutil.net_if_addrs().items():
+
+        for snic in snics:
+
+            if snic.family == psutil.AF_LINK:
+
+                mac = snic.address.replace("-", ":").lower()
+
+                if any(mac.startswith(prefix) for prefix in vm_mac_prefixes):
+
+                    print(
+
+                        f"[!] Sandboxed Environment Detected: VM MAC Address ({mac}) on interface {interface}."
+
+                    )
+
+                    is_sandboxed = True
+
+                all_macs.append(mac)
+
+  
+
+    if not is_sandboxed:
+
+        print(f"[-] MAC address check passed. Found MACs: {all_macs}")
+
+  
+
+    return is_sandboxed
+            </code></pre>
+
+
+
+            <p class="cmu-text">
+
+
+
+                This code performs very basic sandbox detection checks—things like looking for common VM usernames, low
+                RAM, or specific processes. It's important to note this is extremely surface-level; actual sandboxes
+                would easily bypass these checks. The goal here wasn't to create functional malware, but to understand
+                the detection logic threat actors use. The next part was creating the distraction window. The real
+                malware displays fake windows (like game installers or error messages) to keep victims distracted while
+                code runs in the background. I replicated this using the pywebview module to create an HTML/CSS
+                window with an infinite loading bar—simple but effective at demonstrating the concept. The next step
+                involved terminating browser processes and accessing stored data. I used psutil to kill browser
+                processes, which simulates how the malware ensures browsers aren't locking their data files. For the
+                cookie extraction portion, I'll leave out the specific implementation details , but the
+                technique involves understanding how browsers encrypt and store session data locally. The final step was
+                writing all the "stolen data" to a text file to simulate how attackers would send information to their
+                command-and-control server. Overall, this project was both fun and educational. It forced me to
+                understand systems programming at a much deeper level—from process management to file encryption to GUI
+                manipulation.
+            </p>
+
+
+
+
+</body>
+
+</html>
